@@ -26,6 +26,8 @@ print("-------------------------------------------------------------------------
 v = empleado(a, b)
 v.datos()
 v.impuesto()
+print("===============================================================\n")
+
 
 #===============================================================
 #Ejercicio #2
@@ -36,7 +38,7 @@ class Cuenta:
 
     def Apertura(self):
         self.saldo = self.saldo + self.detalle
-        print("Su cuenta se ha inicializado con: $" + str(self.detalle))
+        print("Su cuenta ha sido creada con: $" + str(self.detalle))
 
     def Debito(self):
         if self.saldo < self.detalle:
@@ -51,9 +53,12 @@ class Cuenta:
 
     def Cargo(self):
         self.saldo = self.saldo + self.detalle
-        print("Ha abonado $" + str(self.detalle), "así que su cuenta tiene un saldo de $" + str(self.saldo))
+        print("Ha abonado $" + str(self.detalle), "así que ahora su cuenta tiene un saldo de $" + str(self.saldo))
 
+    def fin(self):
+        print("\n -Usted tiene un saldo final de $" + str(self.saldo), "\n Muchas gracias por utilizar nuestro sistema :)")
 
+        
 repet = True
 nombre = input(("¿Cuál es su nombre? "))
 print("\n Bienvenido", nombre, "¿Que desea realizar? ")
@@ -95,8 +100,12 @@ while repet == True:
             print("Debe crear una cuenta primero...")
             
     if n == 0:
-        print("\n Muchas gracias por utilizar nuestro sistema :)")
+        
+        cuenta.fin()
         repet = False
+
+print("===============================================================\n")
+
 
 
 #===============================================================
@@ -144,10 +153,10 @@ class Estudiante:
         if aprobadas < 4:
             #Basandome en que solo necesita un 80% de materias aprobadas y no la totalidad de ellas
             print("\n" + self.nombre, "ha conseguido un " + str(HS) + "% de asignaturas aprobadas, por lo tanto,",
-                  "\nnecesita reponer", (4 - aprobadas), "materias, para poder realizar su servicio social")
+                  "\nnecesita reponer", (4 - aprobadas), "materias, para poder realizar su servicio social...")
         else:
             print("\n" + self.nombre, "ha conseguido un " + str(HS) + "% de asignaturas aprobadas.",
-                  "\nPor lo tanto, puede realizar su servicio social")
+                  "\nPor lo tanto, puede realizar su servicio social...")
 
         print("--------------------------------------------------------------------------")
 
